@@ -16,10 +16,12 @@ public class ContoOnline extends ContoCorrente {
     }
 
     public void preleva(double x) throws BancaException {
+
         if (x <= maxPrelievo) {
             super.preleva(x);
         }
         if (x > maxPrelievo) throw new BancaException("Il prelievo non è disponibile");
+
     }
 
     public double getMaxPrelievo() {
