@@ -3,18 +3,18 @@ package esercizio3.entities;
 import esercizio3.exceptions.BancaException;
 
 public class ContoCorrente {
-    final int maxMovimenti = 50;
-    String titolare;
-    int nMovimenti;
-    double saldo;
+    final private int maxMovimenti = 50;
+    private final String titolare;
+    private int nMovimenti;
+    private double saldo;
 
-    ContoCorrente(String titolare, double saldo) {
+    public ContoCorrente(String titolare, double saldo) {
         this.titolare = titolare;
         this.saldo = saldo;
         nMovimenti = 0;
     }
 
-    void preleva(double x) throws BancaException {
+    public void preleva(double x) throws BancaException {
         if (nMovimenti < maxMovimenti)
             saldo = saldo - x;
         else
@@ -28,4 +28,24 @@ public class ContoCorrente {
     double restituisciSaldo() {
         return saldo;
     }
+
+    public int getMaxMovimenti() {
+        return maxMovimenti;
+    }
+
+    public String getTitolare() {
+        return titolare;
+    }
+
+
+    public int getnMovimenti() {
+        return nMovimenti;
+    }
+
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+
 }
